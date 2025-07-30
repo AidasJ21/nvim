@@ -1,7 +1,17 @@
 return {
+    {
+        'ShinKage/idris2-nvim',
+        dependencies = { 'neovim/nvim-lspconfig', 'MunifTanjim/nui.nvim' },
+        event = "VeryLazy",
+        config = function ()
+            require('idris2').setup({})
+        end
+    },
+
+
     { "folke/neodev.nvim" },
     { "nvim-lua/plenary.nvim" },
-    { "alec-gibson/nvim-tetris", event = "VeryLazy" },
+    { "alec-gibson/nvim-tetris",         event = "VeryLazy" },
     { 'eandrju/cellular-automaton.nvim', event = "VeryLazy" },
 
     {
@@ -44,7 +54,7 @@ return {
 
     {
         "norcalli/nvim-colorizer.lua",
-        config = function ()
+        config = function()
             require("colorizer").setup()
         end,
     },

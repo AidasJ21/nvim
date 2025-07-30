@@ -28,7 +28,10 @@ vim.keymap.set("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left>
     { desc = "[S]earch and [R]eplace" })
 vim.keymap.set("n", "<leader>sa", "ggVG", { desc = "[S]elect [A]ll" })
 
-vim.keymap.set("n", "<leader>m", ":CellularAutomaton make_it_rain<Enter>")
+vim.keymap.set("n", "<leader>m", "<cmd>CellularAutomaton make_it_rain<cr>", { desc = "[M]ake it rain" })
+
+vim.keymap.set("n", "<M-j>", "<cmd>cnext<cr>", { desc = "Next Quickfix Item" })
+vim.keymap.set("n", "<M-k>", "<cmd>cprev<cr>", { desc = "Previous Quickfix Item" })
 
 -- ------------------------------------------------------------------------------------------------
 -- Splits -----------------------------------------------------------------------------------------
@@ -85,7 +88,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         map("<leader>gi", withOpts(tb.lsp_implementations, tbOpts), "[G]o [I]mplimentation(s)")
         map("<leader>gd", withOpts(tb.lsp_definitions, tbOpts), "[G]o [D]efinition(s)")
         map("<leader>gtd", withOpts(tb.lsp_type_definitions, tbOpts), "[G]o [T]ype [D]efinition(s)" )
-        map("<leader>gds", withOpts(tb.lsp_document_symbols, tbOpts), "[G]o [D]ocument [S]ymbol(s)")
+        map("<leader>gts", withOpts(tb.lsp_document_symbols, tbOpts), "[G]o [T]o Document [S]ymbol(s)")
 
         -- Other
         map('K', vim.lsp.buf.hover, "Hover Documentation")
