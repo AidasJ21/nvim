@@ -3,13 +3,23 @@ return {
         'ShinKage/idris2-nvim',
         dependencies = { 'neovim/nvim-lspconfig', 'MunifTanjim/nui.nvim' },
         event = "VeryLazy",
-        config = function ()
+        config = function()
             require('idris2').setup({})
         end
     },
 
 
-    { "folke/neodev.nvim" },
+    {
+        "folke/lazydev.nvim",
+        ft = "lua", -- only load on lua files
+        opts = {
+            library = {
+                -- See the configuration section for more details
+                -- Load luvit types when the `vim.uv` word is found
+                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+            },
+        },
+    },
     { "nvim-lua/plenary.nvim" },
     { "alec-gibson/nvim-tetris",         event = "VeryLazy" },
     { 'eandrju/cellular-automaton.nvim', event = "VeryLazy" },

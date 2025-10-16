@@ -17,22 +17,16 @@ return {
                     'pylsp',
                     'rust_analyzer',
                     'gopls',
-                    'hls',
+                    --'hls',
                     'zls',
                     "vimls",
                 },
             })
 
-            require("neodev").setup()
-
-            local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol
-                .make_client_capabilities())
 
             require("mason-lspconfig").setup_handlers({
                 function(server_name)
-                    require('lspconfig')[server_name].setup({
-                        capabilities = lsp_capabilities
-                    })
+                    vim.lsp.enable(server_name)
                 end,
             })
 

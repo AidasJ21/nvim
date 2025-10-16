@@ -33,6 +33,8 @@ vim.keymap.set("n", "<leader>m", "<cmd>CellularAutomaton make_it_rain<cr>", { de
 vim.keymap.set("n", "<M-j>", "<cmd>cnext<cr>", { desc = "Next Quickfix Item" })
 vim.keymap.set("n", "<M-k>", "<cmd>cprev<cr>", { desc = "Previous Quickfix Item" })
 
+vim.keymap.set("n", "<leader><leader>", ":source %", { desc = "Sources current file" })
+
 -- ------------------------------------------------------------------------------------------------
 -- Splits -----------------------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------
