@@ -35,3 +35,5 @@ vim.opt.updatetime = 50
 vim.cmd("filetype plugin on")
 
 vim.opt.splitright = true
+
+vim.cmd("let g:omni_sql_no_default_maps = 1")

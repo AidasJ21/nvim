@@ -62,12 +62,12 @@ return {
         end
     },
 
-    {
-        "norcalli/nvim-colorizer.lua",
-        config = function()
-            require("colorizer").setup()
-        end,
-    },
+--    {
+--        "norcalli/nvim-colorizer.lua",
+--        config = function()
+--            require("colorizer").setup()
+--        end,
+--    },
 
     {
         "iamcco/markdown-preview.nvim",
@@ -87,5 +87,11 @@ return {
             "L3MON4D3/LuaSnip",
         },
     },
+
+    {
+  "folke/trouble.nvim",
+  opts = {}, -- for default options, refer to the configuration section for custom setup.
+  cmd = "Trouble",
+}
 
 }

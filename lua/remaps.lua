@@ -35,6 +35,8 @@ vim.keymap.set("n", "<M-k>", "<cmd>cprev<cr>", { desc = "Previous Quickfix Item"
 
 vim.keymap.set("n", "<leader><leader>", ":source %", { desc = "Sources current file" })
 
+vim.keymap.set("n", "<leader>en", "oif err != nil {<Esc>o}<Esc>O", { desc = "Golang err shortcut" })
+
 -- ------------------------------------------------------------------------------------------------
 -- Splits -----------------------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------
@@ -48,7 +50,6 @@ vim.keymap.set("n", "<C-Right>", "<C-w>>", {})
 -- LSP --------------------------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------
 
-vim.keymap.set('n', '<leader>sm', vim.cmd.ClangdSwitchSourceHeader, { desc = "[S]witch Between [M]odule Files" })
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -57,6 +58,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
             mode = mode or "n"
             vim.keymap.set(mode, mapping, callback, { buffer = event.buf, desc = description })
         end
+
+        vim.keymap.set('n', '<leader>sm', vim.cmd.LspClangdSwitchSourceHeader, { desc = "[S]witch Between [M]odule Files" })
 
         -- Formatting
         map("<leader>fo", vim.lsp.buf.format, "[F][o]rmat")
